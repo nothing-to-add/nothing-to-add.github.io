@@ -1,0 +1,50 @@
+# GitHub Pages Configuration
+title: "Your Name - Senior iOS Developer"
+description: "Personal portfolio website showcasing iOS development projects and skills"
+author: "Your Name"
+email: "your.email@example.com"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nothing-to-add.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .DS_Store
+
+# Include files
+include:
+  - _pages
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+twitter:
+  username: your_twitter_username
+  card: summary
+
+facebook:
+  app_id: your_facebook_app_id
+  publisher: your_facebook_page_id
+
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/your_twitter_username
+    - https://www.facebook.com/your_facebook_username
+    - https://www.linkedin.com/in/your_linkedin_profile
+    - https://github.com/nothing-to-add
