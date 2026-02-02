@@ -89,7 +89,9 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding-top: 80px;
+    padding: 120px 0 80px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-container {
@@ -205,6 +207,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .profile-photo {
@@ -215,6 +219,8 @@ body {
     border: 5px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    display: block;
+    position: relative;
 }
 
 .profile-photo:hover {
@@ -237,6 +243,8 @@ section {
 /* About Section */
 .about {
     background: #f8fafc;
+    position: relative;
+    z-index: 10;
 }
 
 .about-content {
@@ -320,6 +328,12 @@ section {
     gap: 2rem;
 }
 
+.projects {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+}
+
 .project-card {
     background: #fff;
     border-radius: 15px;
@@ -399,6 +413,8 @@ section {
 /* Contact Section */
 .contact {
     background: #f8fafc;
+    position: relative;
+    z-index: 10;
 }
 
 .contact-content {
@@ -534,6 +550,10 @@ section {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+
+    .hero-image {
+        order: -1;
     }
 
     .hero-text h1 {

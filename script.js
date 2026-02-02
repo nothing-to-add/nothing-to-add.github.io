@@ -263,16 +263,16 @@ window.addEventListener('load', function() {
 // Set initial opacity to 0 for smooth load
 document.body.style.opacity = '0';
 
-// Parallax effect for hero section
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const heroContent = document.querySelector('.hero-content');
-    
-    if (hero && heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Parallax effect for hero section (disabled to prevent positioning issues)
+// window.addEventListener('scroll', function() {
+//     const scrolled = window.pageYOffset;
+//     const hero = document.querySelector('.hero');
+//     const heroContent = document.querySelector('.hero-content');
+//     
+//     if (hero && heroContent) {
+//         heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+//     }
+// });
 
 // Add progress indicator for long pages
 function createProgressBar() {
