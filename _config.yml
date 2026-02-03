@@ -1,8 +1,8 @@
 # GitHub Pages Configuration
-title: "Your Name - Senior iOS Developer"
+title: "Maksim Laitan - Senior iOS Developer"
 description: "Personal portfolio website showcasing iOS development projects and skills"
-author: "Your Name"
-email: "your.email@example.com"
+author: "Maksim Laitan"
+email: "m.laitan@msn.com"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nothing-to-add.github.io" # the base hostname & protocol for your site
 
@@ -34,17 +34,16 @@ plugins:
 
 # SEO settings
 twitter:
-  username: your_twitter_username
+  username: bringhtnet2dark
   card: summary
 
-facebook:
-  app_id: your_facebook_app_id
-  publisher: your_facebook_page_id
-
 social:
-  name: Your Name
+  name: Maksim Laitan
   links:
-    - https://twitter.com/your_twitter_username
-    - https://www.facebook.com/your_facebook_username
-    - https://www.linkedin.com/in/your_linkedin_profile
+    - https://x.com/bringhtnet2dark
+    - https://linkedin.com/in/maksimlaitan
     - https://github.com/nothing-to-add
+    - https://youtube.com/@nothing-to-add
+    - https://tiktok.com/@nothing-to-add.dev
+    - https://threads.net/@nothing-to-add.dev
+    - https://instagram.com/nothing-to-add.dev
