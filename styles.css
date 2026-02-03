@@ -140,6 +140,7 @@ body {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -281,6 +282,16 @@ section {
 .stat-item p {
     color: #64748b;
     font-weight: 500;
+}
+
+.about-button {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.about-button .btn {
+    font-size: 1.1rem;
+    padding: 0.9rem 2rem;
 }
 
 .skills h3 {
@@ -448,6 +459,89 @@ section {
     color: #2563eb;
     font-size: 1.2rem;
     width: 20px;
+}
+
+/* About Page Styles */
+.about-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.about-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.detailed-about {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.content-placeholder {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-placeholder h2 {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.content-placeholder > p {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.placeholder-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+.placeholder-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.placeholder-item h3 {
+    color: #2563eb;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.placeholder-item p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.back-to-home {
+    margin-top: 3rem;
+}
+
+.nav-menu .active {
+    color: #2563eb;
+    font-weight: 600;
 }
 
 /* Footer */
