@@ -80,4 +80,39 @@ This template is specifically designed for iOS developers and includes:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## TODO - Future Enhancements
+
+### Contact Form Implementation
+Currently, the contact form has been removed for simplicity. To add a functional contact form in the future, consider these options:
+
+1. **Formspree Integration** (Recommended)
+   - Sign up at https://formspree.io (free for 50 submissions/month)
+   - Create a new form and get the endpoint URL
+   - Update HTML form action to point to Formspree endpoint
+   - Add proper form handling JavaScript
+
+2. **Netlify Forms**
+   - If hosting on Netlify, add `netlify` attribute to form
+   - Automatic form handling without external services
+
+3. **EmailJS**
+   - Client-side email sending service
+   - No backend required, works with static sites
+
+4. **Custom Backend**
+   - Implement Node.js/PHP backend for form processing
+   - Requires hosting with server-side capabilities
+
+### Other Potential Enhancements
+- [ ] Add actual project screenshots/demos
+- [ ] Implement blog section
+- [ ] Add testimonials section
+- [ ] Include resume/CV download
+- [ ] Add dark mode toggle
+- [ ] Implement project filtering
+- [ ] Add animation libraries (AOS, GSAP)
+- [ ] Include analytics (Google Analytics)
+- [ ] Add search functionality
+- [ ] Implement PWA features
 My personal site
