@@ -73,12 +73,12 @@
                     
                     <div class="stats">
                         <div class="stat-item">
-                            <h3>1</h3>
-                            <p>App in App Store</p>
+                            <h3>2</h3>
+                            <p>Apps in App Store</p>
                         </div>
                         <div class="stat-item">
-                            <h3>1</h3>
-                            <p>App Submitted</p>
+                            <h3>0</h3>
+                            <p>Apps Submitted</p>
                         </div>
                         <div class="stat-item">
                             <h3>Several</h3>
@@ -149,47 +149,88 @@
                 <div class="projects-grid">
                     
                     <!-- Published App -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="app-icon">
-                                <i class="fas fa-mobile-alt"></i>
+                    <div class="project-card clickable" onclick="window.location.href='gratitude-jar-details.html'">
+                        <div class="project-header">
+                            <img src="Resources/apps/gratitude_jar/gratitude-jar-icon-light.png" alt="Gratitude Jar App Icon" class="app-icon-img">
+                            <div class="app-title-section">
+                                <h3 class="app-name">Gratitude Jar - Share Joy</h3>
+                                <p class="app-subtitle">Family and Group Gratitude</p>
                             </div>
                         </div>
+                        <div class="app-screenshots">
+                            <img src="Resources/apps/gratitude_jar/3.png" alt="Gratitude Jar Screenshot 1" class="screenshot">
+                            <img src="Resources/apps/gratitude_jar/6.png" alt="Gratitude Jar Screenshot 2" class="screenshot">
+                            <img src="Resources/apps/gratitude_jar/2.png" alt="Gratitude Jar Screenshot 3" class="screenshot">
+                        </div>
                         <div class="project-content">
-                            <h3>Gratitude Jar - Share Joy</h3>
                             <p>My first iOS application successfully published on the App Store. Built with Swift and SwiftUI, featuring [key features to be filled].</p>
                             <div class="project-status published">
                                 <i class="fas fa-check-circle"></i>
                                 <span>Live on App Store</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://apps.apple.com/app/gratitude-jar-share-joy/id6748481759" class="btn btn-small" target="_blank">
+                                <a href="https://apps.apple.com/app/gratitude-jar-share-joy/id6748481759" class="btn btn-small" target="_blank" onclick="event.stopPropagation()">
                                     <i class="fab fa-app-store"></i> View on App Store
                                 </a>
-                                <a href="#" class="btn btn-small btn-secondary" target="_blank">
+                                <a href="#" class="btn btn-small btn-secondary" target="_blank" onclick="event.stopPropagation()">
                                     <i class="fab fa-github"></i> Source Code
+                                </a>
+                                <a href="gratitude-jar-details.html" class="btn btn-small btn-primary" onclick="event.stopPropagation()">
+                                    <i class="fas fa-info-circle"></i> App Details
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Submitted App -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="app-icon">
-                                <i class="fas fa-mobile-alt"></i>
+                    <div class="project-card clickable" onclick="window.location.href='pain-tracker-details.html'">
+                        <div class="project-header">
+                            <img src="Resources/apps/pain_tracker/Pain Tracker Icon.png" alt="Pain Tracker App Icon" class="app-icon-img">
+                            <div class="app-title-section">
+                                <h3 class="app-name">PainPoint: Pain Tracker</h3>
+                                <p class="app-subtitle">Log Pain Episodes & Export PDF</p>
                             </div>
                         </div>
+                        <div class="app-screenshots">
+                            <img src="Resources/apps/pain_tracker/1.jpg" alt="PainPoint Screenshot 1" class="screenshot">
+                            <img src="Resources/apps/pain_tracker/2.jpg" alt="PainPoint Screenshot 2" class="screenshot">
+                            <img src="Resources/apps/pain_tracker/3.jpg" alt="PainPoint Screenshot 3" class="screenshot">
+                        </div>
                         <div class="project-content">
-                            <h3>Recently Submitted App</h3>
-                            <p>Latest iOS application submitted for App Store review. Features [key features to be filled] and showcases advanced iOS development techniques.</p>
-                            <div class="project-status submitted">
-                                <i class="fas fa-clock"></i>
-                                <span>Under Review</span>
+                            <p>A comprehensive iOS pain management application built with Swift 6.0 and SwiftData that helps users track pain levels and generate professional medical reports for healthcare providers.</p>
+                            
+                            <div class="feature-section">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>Interactive pain tracking with 1-10 intensity scales</li>
+                                    <li>Comprehensive body location mapping (60+ anatomical areas)</li>
+                                    <li>14 medically-recognized pain type classifications</li>
+                                    <li>Professional PDF report generation for doctors</li>
+                                    <li>Real-time data synchronization across views</li>
+                                    <li>Medical-grade color scheme for clinical credibility</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-section">
+                                <p><strong>Tech Stack:</strong> SwiftUI, SwiftData, MVVM Architecture, Repository Pattern</p>
+                                <p><strong>Platform:</strong> iOS 17.6+, iPhone & iPad compatible</p>
+                                <p><strong>Status:</strong> Production Release (v1.0)</p>
+                            </div>
+                            
+                            <p><em>Built from the ground up with modern iOS frameworks, this app demonstrates advanced SwiftData implementation, reactive programming with Combine, and professional healthcare app design principles.</em></p>
+                            <div class="project-status published">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Live on App Store</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-small btn-secondary" target="_blank">
+                                <a href="https://apps.apple.com/app/painpoint-pain-tracker/id6758923443" class="btn btn-small" target="_blank" onclick="event.stopPropagation()">
+                                    <i class="fab fa-app-store"></i> View on App Store
+                                </a>
+                                <a href="#" class="btn btn-small btn-secondary" target="_blank" onclick="event.stopPropagation()">
                                     <i class="fab fa-github"></i> Source Code
+                                </a>
+                                <a href="pain-tracker-details.html" class="btn btn-small btn-primary" onclick="event.stopPropagation()">
+                                    <i class="fas fa-info-circle"></i> App Details
                                 </a>
                             </div>
                         </div>

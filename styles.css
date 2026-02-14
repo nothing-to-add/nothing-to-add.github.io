@@ -451,8 +451,193 @@ section {
     font-size: 2rem;
 }
 
+.app-icon-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.project-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 2rem 0 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-title-section {
+    margin-left: 1rem;
+    flex: 1;
+}
+
+.project-header .app-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin: 0 0 0.25rem 0;
+}
+
+.project-header .app-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #64748b;
+    margin: 0;
+    font-style: italic;
+}
+
+.project-header .app-icon-img {
+    flex-shrink: 0;
+}
+
+.app-screenshots {
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem 1rem 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.screenshot {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
 .project-content {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+/* Clickable Project Cards */
+.project-card.clickable {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card.clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* App Details Pages */
+.app-details {
+    padding: 8rem 0 4rem 0;
+    min-height: 100vh;
+}
+
+.app-header-detail {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
     padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.app-icon-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.app-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.app-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.app-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.app-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.app-screenshots-large {
+    margin-bottom: 3rem;
+}
+
+.app-screenshots-large h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2563eb;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.screenshot-large {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-large:hover {
+    transform: scale(1.05);
+}
+
+.app-description {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.app-description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+.app-description h4 {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.5rem 0;
+    color: #374151;
+}
+
+/* Responsive Design for App Details */
+@media (max-width: 768px) {
+    .app-header-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .app-info h1 {
+        font-size: 2rem;
+    }
+    
+    .screenshots-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
 .project-content h3 {
@@ -460,6 +645,39 @@ section {
     font-weight: 600;
     margin-bottom: 1rem;
     color: #2563eb;
+}
+
+.feature-section, .tech-section {
+    margin: 1.5rem 0;
+}
+
+.feature-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.feature-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #64748b;
+}
+
+.feature-section li {
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+
+.tech-section p {
+    margin-bottom: 0.5rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.tech-section strong {
+    color: #334155;
+    font-weight: 600;
 }
 
 .project-content .app-name {
