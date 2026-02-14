@@ -67,21 +67,213 @@
             </div>
 
             <div class="app-description">
-                <h3>About This App</h3>
-                <p>My first iOS application successfully published on the App Store. Built with Swift and SwiftUI, featuring family and group gratitude sharing capabilities.</p>
+                <h2>A modern SwiftUI gratitude journaling app with Firebase backend and premium subscription features</h2>
                 
-                <h4>Key Features:</h4>
+                <h3>Overview</h3>
+                <p>Gratitude Jar is a comprehensive iOS application designed to help users cultivate mindfulness and positive thinking through structured gratitude practices. The app combines personal reflection with social connectivity, allowing users to create both private and shared gratitude collections while maintaining a clean, intuitive user experience.</p>
+
+                <h3>Core Features</h3>
+                
+                <h4>🏺 Multiple Jar Types</h4>
                 <ul>
-                    <li>Share gratitude with family and friends</li>
-                    <li>Group gratitude experiences</li>
-                    <li>Beautiful and intuitive interface</li>
-                    <li>Built with modern SwiftUI</li>
+                    <li><strong>Personal Jars:</strong> Private gratitude collections for individual reflection</li>
+                    <li><strong>Shared Jars:</strong> Collaborative spaces for families, friends, and groups</li>
+                    <li><strong>Anonymous Contributions:</strong> Safe, judgment-free participation in shared spaces</li>
                 </ul>
 
-                <h4>Technical Details:</h4>
-                <p><strong>Platform:</strong> iOS</p>
-                <p><strong>Technologies:</strong> Swift, SwiftUI</p>
-                <p><strong>Status:</strong> Live on App Store</p>
+                <h4>📝 Rich Entry Creation</h4>
+                <ul>
+                    <li>Text-based gratitude entries with rich formatting</li>
+                    <li>Photo attachments for visual memories</li>
+                    <li>Timestamp tracking and entry statistics</li>
+                    <li>Import/export functionality for data portability</li>
+                </ul>
+
+                <h4>👥 Social Collaboration</h4>
+                <ul>
+                    <li>Real-time synchronization across devices</li>
+                    <li>User invitation system for shared jars</li>
+                    <li>Member management with role-based permissions</li>
+                    <li>Firebase-powered real-time updates</li>
+                </ul>
+
+                <h4>📊 Analytics & Insights</h4>
+                <ul>
+                    <li>Daily, weekly, and monthly entry statistics</li>
+                    <li>Gratitude journey visualization</li>
+                    <li>Progress tracking and habit formation metrics</li>
+                    <li>Export capabilities for therapeutic use</li>
+                </ul>
+
+                <h4>🔔 Smart Notifications</h4>
+                <ul>
+                    <li>Customizable gratitude reminders</li>
+                    <li>Local and push notification support</li>
+                    <li>Family jar update notifications</li>
+                    <li>Adaptive scheduling based on user behavior</li>
+                </ul>
+
+                <h3>Technical Architecture</h3>
+                
+                <h4>Platform & Framework</h4>
+                <ul>
+                    <li>iOS 17.0+ targeting modern iPhone and iPad devices</li>
+                    <li>Swift 6.0 with latest language features and concurrency</li>
+                    <li>SwiftUI for declarative user interface design</li>
+                    <li>SwiftData for local data persistence and offline functionality</li>
+                </ul>
+
+                <h4>Architecture Pattern</h4>
+                <ul>
+                    <li>MVVM (Model-View-ViewModel) architecture</li>
+                    <li>Repository Pattern for data access abstraction</li>
+                    <li>Coordinator Pattern for navigation flow management</li>
+                    <li>SOLID principles adherence for maintainable code</li>
+                </ul>
+
+                <h4>Backend Infrastructure</h4>
+                <ul>
+                    <li>Firebase Authentication with Apple Sign-In integration</li>
+                    <li>Cloud Firestore for real-time data synchronization</li>
+                    <li>Firebase Cloud Messaging for push notifications</li>
+                    <li>Firebase Analytics for user behavior insights (optional)</li>
+                    <li>Firebase Crashlytics for crash reporting and debugging</li>
+                </ul>
+
+                <h4>Data Management</h4>
+                <ul>
+                    <li><strong>Hybrid Storage Strategy:</strong> SwiftData for local/offline, Firebase for cloud sync</li>
+                    <li><strong>Anonymous User Support:</strong> Full functionality without registration</li>
+                    <li><strong>Automatic Migration:</strong> Seamless data transfer when users sign up</li>
+                    <li><strong>Offline-First Architecture:</strong> App functions completely without internet</li>
+                </ul>
+
+                <h3>Premium Features & Monetization</h3>
+                <ul>
+                    <li>RevenueCat Integration for subscription management</li>
+                    <li>Freemium Model with 7-day free trial</li>
+                    <li>Premium Features: Unlimited jars, advanced analytics, photo uploads, PDF exports</li>
+                    <li>Apple StoreKit for native subscription handling</li>
+                </ul>
+
+                <h3>Security & Privacy</h3>
+                
+                <h4>Data Protection</h4>
+                <ul>
+                    <li>Firebase Security Rules for role-based access control</li>
+                    <li>Local data encryption using iOS Keychain services</li>
+                    <li>GDPR Compliance with data export and deletion features</li>
+                    <li>Privacy-First Design with anonymous participation options</li>
+                </ul>
+
+                <h4>Authentication</h4>
+                <ul>
+                    <li>Apple Sign-In as primary authentication method</li>
+                    <li>Google Sign-In as alternative option</li>
+                    <li>Anonymous Authentication for unregistered users</li>
+                    <li>Secure token management with automatic refresh</li>
+                </ul>
+
+                <h3>User Experience Features</h3>
+                
+                <h4>Accessibility</h4>
+                <ul>
+                    <li>VoiceOver Support for vision accessibility</li>
+                    <li>Dynamic Type support for text scaling</li>
+                    <li>High Contrast mode compatibility</li>
+                    <li>Voice Control integration</li>
+                </ul>
+
+                <h4>Internationalization</h4>
+                <ul>
+                    <li>Multi-language Support (English, Spanish initially)</li>
+                    <li>Right-to-Left language support</li>
+                    <li>Localized strings with proper pluralization</li>
+                    <li>Cultural date/time formatting</li>
+                </ul>
+
+                <h4>Design System</h4>
+                <ul>
+                    <li>Dark/Light Mode automatic adaptation</li>
+                    <li>iOS Design Guidelines adherence</li>
+                    <li>Custom Typography hierarchy</li>
+                    <li>Consistent Color Palette across all screens</li>
+                    <li>Adaptive UI for iPhone and iPad</li>
+                </ul>
+
+                <h3>Development Workflow</h3>
+                
+                <h4>Build Tools</h4>
+                <ul>
+                    <li>Xcode 16+ as primary IDE</li>
+                    <li>Swift Package Manager for dependency management</li>
+                    <li>Fastlane for automated builds and deployment</li>
+                    <li>GitHub Actions for CI/CD pipeline</li>
+                </ul>
+
+                <h4>Code Quality</h4>
+                <ul>
+                    <li>SwiftLint for code style enforcement</li>
+                    <li>Unit Testing with XCTest framework</li>
+                    <li>UI Testing for critical user flows</li>
+                    <li>Code Coverage reporting and monitoring</li>
+                </ul>
+
+                <h3>App Store Information</h3>
+                <ul>
+                    <li><strong>Bundle ID:</strong> com.nothing-to-add.gratitude-jar</li>
+                    <li><strong>Target Audience:</strong> Individuals, families, mental health professionals</li>
+                    <li><strong>Age Rating:</strong> 4+ (suitable for all ages)</li>
+                    <li><strong>Privacy Nutrition Labels:</strong> Minimal data collection</li>
+                    <li><strong>App Store Category:</strong> Health & Fitness / Lifestyle</li>
+                </ul>
+
+                <h3>Performance & Scalability</h3>
+                
+                <h4>Optimization</h4>
+                <ul>
+                    <li>Lazy Loading for large entry collections</li>
+                    <li>Image Optimization with automatic compression</li>
+                    <li>Background Sync for seamless user experience</li>
+                    <li>Memory Management with proper retention cycles</li>
+                </ul>
+
+                <h4>Monitoring</h4>
+                <ul>
+                    <li>Firebase Performance Monitoring for app responsiveness</li>
+                    <li>Crash Analytics for stability tracking</li>
+                    <li>User Engagement Metrics for feature optimization</li>
+                    <li>Server Response Time monitoring</li>
+                </ul>
+
+                <h3>Future Roadmap</h3>
+                
+                <h4>Version 2.0 Planned Features</h4>
+                <ul>
+                    <li>Apple Watch Companion App for quick entry creation</li>
+                    <li>Siri Shortcuts Integration for voice-activated entries</li>
+                    <li>Widget Support for home screen gratitude reminders</li>
+                    <li>Advanced Theming with custom jar visualizations</li>
+                    <li>Mood Tracking Integration with HealthKit</li>
+                    <li>AI-Powered Insights for gratitude pattern analysis</li>
+                </ul>
+
+                <h3>Professional Impact</h3>
+                <p>This project demonstrates proficiency in:</p>
+                <ul>
+                    <li>Modern iOS Development with latest SwiftUI patterns</li>
+                    <li>Firebase Integration and real-time database management</li>
+                    <li>Subscription Business Models and monetization strategies</li>
+                    <li>User-Centered Design with accessibility considerations</li>
+                    <li>Enterprise-Grade Architecture for scalable applications</li>
+                    <li>Cross-Platform Thinking for future expansion opportunities</li>
+                </ul>
+
+                <p>The app successfully balances technical complexity with user simplicity, creating a meaningful tool for mental wellness while showcasing advanced iOS development capabilities.</p>
+
+                <div class="tech-summary">
+                    <p><strong>Gratitude Jar represents a comprehensive approach to iOS app development, combining cutting-edge technology with human-centered design to create a genuinely useful application for mental health and social connection.</strong></p>
+                </div>
             </div>
         </div>
     </section>
