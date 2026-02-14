@@ -67,29 +67,225 @@
             </div>
 
             <div class="app-description">
-                <h3>About This App</h3>
-                <p>A comprehensive iOS pain management application built with Swift 6.0 and SwiftData that helps users track pain levels and generate professional medical reports for healthcare providers.</p>
+                <h2>Project Overview</h2>
+                <p>iOS Pain Tracker is a comprehensive medical-grade iOS application designed to bridge the gap between patient pain experiences and healthcare documentation. Built from the ground up with SwiftUI and SwiftData, this app transforms subjective pain reporting into objective, shareable medical data that enhances treatment outcomes and patient-provider communication.</p>
                 
-                <div class="feature-section">
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li>Interactive pain tracking with 1-10 intensity scales</li>
-                        <li>Comprehensive body location mapping (60+ anatomical areas)</li>
-                        <li>14 medically-recognized pain type classifications</li>
-                        <li>Professional PDF report generation for doctors</li>
-                        <li>Real-time data synchronization across views</li>
-                        <li>Medical-grade color scheme for clinical credibility</li>
-                    </ul>
+                <p>The application addresses a critical healthcare challenge: the difficulty patients face in accurately communicating their pain experiences to medical professionals. By providing structured data collection, visualization, and professional reporting capabilities, the app serves as a digital bridge between appointments, enabling more informed medical decisions.</p>
+
+                <h3>Core Features & Capabilities</h3>
+                
+                <h4>Advanced Pain Tracking System</h4>
+                <ul>
+                    <li><strong>Precision Body Mapping:</strong> Interactive selection from 60+ anatomical locations including specific areas like "Left Knee," "Lower Back," and "Upper Abdomen"</li>
+                    <li><strong>Medical Pain Classification:</strong> 14 clinically-recognized pain types (Sharp, Dull, Burning, Throbbing, Pressure, Aching, Stabbing, Cramping, Tingling, Shooting, Stiff, Tender, Radiating, Electric)</li>
+                    <li><strong>Intensity Visualization:</strong> Dynamic 1-10 pain scale with medical color coding that adapts based on severity levels</li>
+                    <li><strong>Temporal Tracking:</strong> Precise timestamp recording with manual adjustment capabilities for accurate episode documentation</li>
+                </ul>
+
+                <h4>Data Visualization & Analytics</h4>
+                <ul>
+                    <li><strong>Real-time Dashboard:</strong> Live statistics showing today's entries, 7-day trends, and pattern recognition</li>
+                    <li><strong>Historical Timeline:</strong> Chronologically organized pain history with expandable date sections for easy navigation</li>
+                    <li><strong>Statistical Insights:</strong> Automated analysis of pain patterns, frequency trends, and intensity fluctuations</li>
+                    <li><strong>Visual Indicators:</strong> Color-coded intensity mapping using medical-grade color psychology (blues for trust, graduated warning colors for severity)</li>
+                </ul>
+
+                <h4>Professional Medical Reporting</h4>
+                <ul>
+                    <li><strong>PDF Export Engine:</strong> Custom-built PDF generation system creating medical-grade reports</li>
+                    <li><strong>Flexible Date Ranges:</strong> Export capabilities for last 7 days, 30 days, or custom date ranges</li>
+                    <li><strong>Healthcare Integration:</strong> Reports formatted specifically for medical appointments, specialist referrals, and insurance documentation</li>
+                    <li><strong>Comprehensive Summaries:</strong> Include pain pattern analysis, intensity trends, location frequency, and detailed entry logs</li>
+                </ul>
+
+                <h4>User Experience Design</h4>
+                <ul>
+                    <li><strong>Medical Color Psychology:</strong> Professional blue-based color scheme that builds trust and reduces anxiety for users experiencing pain</li>
+                    <li><strong>Accessibility-First:</strong> High contrast ratios, readable typography, and intuitive navigation designed for users with varying technical abilities</li>
+                    <li><strong>Privacy-Focused:</strong> Local data storage only—no cloud uploads, no external data sharing, complete user privacy protection</li>
+                </ul>
+
+                <h3>Technical Architecture & Implementation</h3>
+                
+                <h4>Technology Stack</h4>
+                <ul>
+                    <li><strong>Platform:</strong> iOS 17.6+ (iPhone & iPad compatible)</li>
+                    <li><strong>Programming Language:</strong> Swift 6.0 with modern concurrency features</li>
+                    <li><strong>UI Framework:</strong> SwiftUI for declarative, reactive user interface development</li>
+                    <li><strong>Data Persistence:</strong> SwiftData (Apple's modern Core Data replacement) with advanced schema versioning</li>
+                    <li><strong>Architecture Pattern:</strong> MVVM (Model-View-ViewModel) with Repository Pattern for clean separation of concerns</li>
+                    <li><strong>Dependency Management:</strong> Custom dependency injection container with environment-based propagation</li>
+                </ul>
+
+                <h4>Advanced Data Management</h4>
+                <div class="code-section">
+                    <pre><code>// Schema Versioning Architecture
+enum PainEntrySchemaV1: VersionedSchema {
+    static var versionIdentifier = Schema.Version(1, 0, 0)
+    static var models: [any PersistentModel.Type] { [PainEntryV1.self] }
+}
+
+// Repository Pattern Implementation
+@MainActor
+protocol PainEntryRepositoryProtocol {
+    func fetchAll() async throws -> [PainEntry]
+    func insert(_ entry: PainEntry) async throws
+    func fetchInDateRange(from: Date, to: Date) async throws -> [PainEntry]
+}</code></pre>
                 </div>
+
+                <h4>Reactive Data Flow</h4>
+                <ul>
+                    <li><strong>Combine Framework:</strong> Publisher-subscriber pattern for real-time UI updates</li>
+                    <li><strong>NotificationCenter Integration:</strong> System-wide data change notifications ensuring cross-view consistency</li>
+                    <li><strong>Async/Await Architecture:</strong> Modern Swift concurrency for smooth, non-blocking user experiences</li>
+                    <li><strong>SwiftData Observers:</strong> Automatic UI synchronization when underlying data changes</li>
+                </ul>
+
+                <h4>Performance Optimizations</h4>
+                <ul>
+                    <li><strong>Lazy Loading:</strong> View models initialized on-demand to prevent startup delays</li>
+                    <li><strong>Background Processing:</strong> Heavy operations (PDF generation, data exports) performed off main thread</li>
+                    <li><strong>Memory Management:</strong> Efficient data fetching with descriptors and predicates to minimize memory footprint</li>
+                    <li><strong>Splash Screen Architecture:</strong> Non-blocking app initialization with background container setup</li>
+                </ul>
+
+                <h3>Software Engineering Excellence</h3>
                 
-                <div class="tech-section">
-                    <h4>Technical Details:</h4>
-                    <p><strong>Tech Stack:</strong> SwiftUI, SwiftData, MVVM Architecture, Repository Pattern</p>
-                    <p><strong>Platform:</strong> iOS 17.6+, iPhone & iPad compatible</p>
-                    <p><strong>Status:</strong> Production Release (v1.0)</p>
+                <h4>Clean Architecture Implementation</h4>
+                <div class="code-section">
+                    <pre><code>// Dependency Injection Container
+@MainActor
+final class DependencyContainer {
+    let painEntryRepository: PainEntryRepositoryProtocol
+    
+    lazy var homeViewModel: HomeViewModel = 
+        HomeViewModel(repository: painEntryRepository)
+    lazy var exportViewModel: ExportViewModel = 
+        ExportViewModel(repository: painEntryRepository)
+}</code></pre>
                 </div>
+
+                <h4>Data Migration Strategy</h4>
+                <ul>
+                    <li><strong>Schema Versioning:</strong> Future-proof data structure with VersionedSchema protocol implementation</li>
+                    <li><strong>Migration Plans:</strong> Structured approach for handling schema evolution without data loss</li>
+                    <li><strong>Backward Compatibility:</strong> Type aliases maintaining API consistency across versions</li>
+                </ul>
+
+                <h4>Testing & Quality Assurance</h4>
+                <ul>
+                    <li><strong>Repository Pattern Testing:</strong> Mockable interfaces for comprehensive unit testing</li>
+                    <li><strong>Error Handling:</strong> Comprehensive error management with user-friendly messaging</li>
+                    <li><strong>Data Validation:</strong> Input validation ensuring data integrity throughout the application lifecycle</li>
+                </ul>
+
+                <h3>User Experience Research & Design</h3>
                 
-                <p><em>Built from the ground up with modern iOS frameworks, this app demonstrates advanced SwiftData implementation, reactive programming with Combine, and professional healthcare app design principles.</em></p>
+                <h4>Medical Color Psychology</h4>
+                <p>The application employs evidence-based color psychology specifically tailored for medical applications:</p>
+                <ul>
+                    <li><strong>Primary Medical Blue (#2563eb):</strong> Builds trust and professionalism, universally associated with healthcare</li>
+                    <li><strong>Pain Intensity Scale:</strong> Color-graduated system from emerald (low pain) through amber (moderate) to red (severe)</li>
+                    <li><strong>Calming Aesthetics:</strong> Designed to reduce stress and anxiety for users experiencing pain</li>
+                </ul>
+
+                <h4>Accessibility Considerations</h4>
+                <ul>
+                    <li><strong>High Contrast Ratios:</strong> Ensuring readability for users with visual impairments</li>
+                    <li><strong>Large Touch Targets:</strong> Pain-friendly interface design considering motor skill limitations</li>
+                    <li><strong>Clear Typography:</strong> Medical-grade legibility for users experiencing pain-related cognitive effects</li>
+                </ul>
+
+                <h3>Healthcare Integration Features</h3>
+                
+                <h4>Professional Reporting System</h4>
+                <p>The PDF export system generates medical-grade documentation including:</p>
+                <ul>
+                    <li><strong>Patient Demographics:</strong> Configurable personal information for medical context</li>
+                    <li><strong>Pain Pattern Analysis:</strong> Statistical summaries of pain frequency, intensity, and location trends</li>
+                    <li><strong>Temporal Documentation:</strong> Precise timestamps for correlation with treatments, medications, and external factors</li>
+                    <li><strong>Comprehensive Entry Logs:</strong> Detailed individual pain episodes with complete context</li>
+                </ul>
+
+                <h4>Clinical Workflow Integration</h4>
+                <ul>
+                    <li><strong>Appointment Preparation:</strong> Pre-visit report generation for more productive healthcare consultations</li>
+                    <li><strong>Specialist Referrals:</strong> Comprehensive pain history documentation for referral processes</li>
+                    <li><strong>Treatment Monitoring:</strong> Baseline establishment and progress tracking for treatment effectiveness assessment</li>
+                    <li><strong>Insurance Documentation:</strong> Professional-format reports suitable for insurance claim support</li>
+                </ul>
+
+                <h3>Privacy & Security Architecture</h3>
+                
+                <h4>Privacy-First Design Philosophy</h4>
+                <ul>
+                    <li><strong>Local Data Storage:</strong> All personal health information remains on user's device</li>
+                    <li><strong>No External Dependencies:</strong> Zero third-party analytics, tracking, or data transmission services</li>
+                    <li><strong>User Control:</strong> Complete ownership of personal health data with export/delete capabilities</li>
+                    <li><strong>Compliance Ready:</strong> Architecture designed to support HIPAA-adjacent privacy requirements</li>
+                </ul>
+
+                <h4>Data Security Measures</h4>
+                <ul>
+                    <li><strong>SwiftData Encryption:</strong> Leveraging iOS's built-in data protection mechanisms</li>
+                    <li><strong>No Network Transmission:</strong> Eliminates attack vectors associated with data transmission</li>
+                    <li><strong>Sandbox Protection:</strong> iOS application sandbox provides additional security layers</li>
+                </ul>
+
+                <h3>Development Process & Methodology</h3>
+                
+                <h4>Modern Swift Development</h4>
+                <ul>
+                    <li><strong>Swift 6.0 Features:</strong> Utilizing latest language improvements for performance and safety</li>
+                    <li><strong>Strict Concurrency:</strong> Modern async/await patterns preventing race conditions</li>
+                    <li><strong>Memory Safety:</strong> ARC optimization and proper resource management</li>
+                    <li><strong>Error Handling:</strong> Comprehensive error propagation and user feedback systems</li>
+                </ul>
+
+                <h4>Version Control & Documentation</h4>
+                <ul>
+                    <li><strong>GitHub Repository:</strong> Complete version control with detailed commit history and branching strategy</li>
+                    <li><strong>Comprehensive Documentation:</strong> README files, technical guides, and implementation summaries</li>
+                    <li><strong>Code Comments:</strong> Inline documentation for maintainability and knowledge transfer</li>
+                </ul>
+
+                <h3>Future Roadmap & Extensibility</h3>
+                
+                <h4>Planned Enhancements</h4>
+                <ul>
+                    <li><strong>Apple Health Integration:</strong> Seamless integration with HealthKit for comprehensive health tracking</li>
+                    <li><strong>Apple Watch Companion:</strong> Quick pain logging and notifications on wearable devices</li>
+                    <li><strong>iCloud Synchronization:</strong> Optional cloud backup while maintaining privacy controls</li>
+                    <li><strong>Advanced Analytics:</strong> Machine learning integration for pain pattern prediction and insights</li>
+                </ul>
+
+                <h4>Technical Evolution</h4>
+                <ul>
+                    <li><strong>Modular Architecture:</strong> Designed for feature expansion without architectural refactoring</li>
+                    <li><strong>API Abstraction:</strong> Repository patterns enabling future backend integration if desired</li>
+                    <li><strong>Internationalization Ready:</strong> Architecture supporting multiple languages and medical systems</li>
+                </ul>
+
+                <h3>Project Impact & Innovation</h3>
+                <p>iOS Pain Tracker represents a significant advancement in personal health technology, addressing the critical gap between patient experiences and medical documentation. By combining modern iOS development techniques with evidence-based medical color psychology and user experience design, the application demonstrates how technology can enhance healthcare outcomes.</p>
+                
+                <p>The project showcases advanced iOS development skills including SwiftData schema versioning, reactive programming patterns, dependency injection, and professional-grade PDF generation—all while maintaining the highest standards of user privacy and data security.</p>
+
+                <h4>Technical Achievements:</h4>
+                <ul>
+                    <li>Zero-dependency native iOS application with advanced data persistence</li>
+                    <li>Medical-grade user interface design with accessibility considerations</li>
+                    <li>Comprehensive error handling and data validation systems</li>
+                    <li>Future-proof architecture with schema migration capabilities</li>
+                    <li>Professional healthcare integration through standardized reporting</li>
+                </ul>
+
+                <p><strong>This application serves as both a practical healthcare tool and a demonstration of modern iOS development excellence, combining technical sophistication with real-world medical utility.</strong></p>
+
+                <div class="tech-summary">
+                    <p><em>Built with Swift 6.0, SwiftUI, SwiftData | Available on the App Store</em></p>
+                </div>
             </div>
         </div>
     </section>

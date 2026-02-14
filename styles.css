@@ -624,6 +624,65 @@ section {
     color: #374151;
 }
 
+.code-section {
+    background: #1f2937;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-section pre {
+    margin: 0;
+    color: #e5e7eb;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.code-section code {
+    color: #e5e7eb;
+    font-family: inherit;
+}
+
+.tech-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.tech-summary p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.app-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2563eb;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.app-description h3 {
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem 0;
+    color: #2563eb;
+}
+
+.app-description ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.app-description li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
 /* Responsive Design for App Details */
 @media (max-width: 768px) {
     .app-header-detail {
