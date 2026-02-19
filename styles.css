@@ -414,6 +414,17 @@ section {
     gap: 2rem;
 }
 
+.projects-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.projects-vertical .project-card {
+    width: 100%;
+    max-width: none;
+}
+
 .project-card {
     background: #fff;
     border-radius: 15px;
