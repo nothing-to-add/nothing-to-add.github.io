@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        DOCKER_BUILDKIT: "0"
+    image: portfolio:latest
     container_name: portfolio-website
     ports:
       - "3000:80"  # Access at http://localhost:3000

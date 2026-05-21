@@ -6,6 +6,8 @@ pipeline {
         CONTAINER_NAME = 'portfolio-website'
         IMAGE_NAME = 'portfolio:latest'
         PORT = '3000'
+        DOCKER_BUILDKIT = '0'
+        COMPOSE_DOCKER_CLI_BUILD = '0'
     }
     
     parameters {
@@ -56,11 +58,16 @@ pipeline {
                     dir('/var/projects/nothing-to-add.github.io') {
                         sh '''
                             echo "Stopping existing containers..."
-                            docker-compose down || true
+                            docker compose down || true
                             
                             if [ "${CLEANUP_OLD}" = "true" ]; then
                                 echo "Cleaning up old images..."
-                                docker rmi ${IMAGE_NAME} || true
+                                if docker image inspect ${IMAGE_NAME} > /dev/null 2>&1; then
+                                    docker rmi ${IMAGE_NAME} || true
+                                    echo "Old image removed."
+                                else
+                                    echo "No existing image to remove, skipping."
+                                fi
                                 docker system prune -f || true
                             fi
                         '''
@@ -84,13 +91,13 @@ pipeline {
                             
                             if [ "${FORCE_REBUILD}" = "true" ]; then
                                 echo "Force rebuilding Docker image..."
-                                docker-compose build --no-cache
+                                docker compose build --no-cache
                             else
-                                docker-compose build
+                                docker compose build
                             fi
                             
                             echo "Starting services..."
-                            docker-compose up -d
+                            docker compose up -d
                             
                             echo "Waiting for service to be healthy..."
                             sleep 10
@@ -116,7 +123,7 @@ pipeline {
                     dir('/var/projects/nothing-to-add.github.io') {
                         sh '''
                             echo "=== SERVICE STATUS ==="
-                            docker-compose ps
+                            docker compose ps
                             
                             echo "\\n=== CONTAINER DETAILS ==="
                             docker ps --filter "name=${CONTAINER_NAME}" --format "table {{.Names}}\\t{{.Status}}\\t{{.Ports}}"
@@ -145,7 +152,7 @@ pipeline {
                     dir('/var/projects/nothing-to-add.github.io') {
                         sh '''
                             echo "=== RECENT LOGS ==="
-                            docker-compose logs --tail=50 portfolio
+                            docker compose logs --tail=50 portfolio
                         '''
                     }
                 }
